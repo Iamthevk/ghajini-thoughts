@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import AddThoughtForm from "./components/AddThoughtForm";
 
 function App() {
   const [thoughts, setThoughts] = useState([
@@ -16,14 +17,24 @@ function App() {
   ]);
   return (
     <>
-      <header>
+      <header className="App">
         <h1>Ghajini Thoughts</h1>
       </header>
-      <ul>
-        {thoughts.map((thought) => {
-          return <p key={thought.id}>{thought.text}</p>;
-        })}
-      </ul>
+      <main>
+        <AddThoughtForm />
+        <ul className="thoughts">
+          {thoughts.map((thought) => {
+            return (
+              <li className="Thought" key={thought.id}>
+                <button aria-label="Remove thought" className="remove-button">
+                  &times;
+                </button>
+                <div className="text">{thought.text}</div>
+              </li>
+            );
+          })}
+        </ul>
+      </main>
     </>
   );
 }

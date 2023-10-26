@@ -40,3 +40,62 @@
 .read-the-docs {
   color: #888;
 }
+
+.App h1:before {
+  content: "💭";
+  margin-right: 0.5em;
+}
+
+input[type="submit"],
+button {
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.AddThoughtForm {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+}
+
+.AddThoughtForm input {
+  padding: 1.5rem;
+  border: 1px solid #666;
+  border-radius: 3px;
+}
+.AddThoughtForm input[type="text"] {
+  flex-grow: 1;
+  margin-right: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.thoughts {
+  list-style-type: none;
+  padding: 0;
+  color: #000;
+}
+
+.Thought {
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+  background-color: #eee;
+  position: relative;
+}
+
+.Thought .remove-button {
+  position: absolute;
+  font-size: 2rem;
+  /* float: right; */
+  right: 0;
+  top: 0px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  overflow: hidden;
+}
+
+.Thought .remove-button:hover {
+  color: #fff;
+  background-color: #000;
+}
