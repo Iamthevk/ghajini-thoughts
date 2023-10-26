@@ -1,18 +1,19 @@
 import { useState } from "react";
 import "./App.css";
 import AddThoughtForm from "./components/AddThoughtForm";
+import { getNewExpirationTime, generateId } from "./utils";
 
 function App() {
   const [thoughts, setThoughts] = useState([
     {
-      id: 1,
+      id: generateId(),
       text: "This is a place for your passing thoughts",
-      expiresAt: 3000,
+      expiresAt: getNewExpirationTime(),
     },
     {
-      id: 2,
+      id: generateId(),
       text: "They'll be removed after 15 seconds.",
-      expiresAt: 3000,
+      expiresAt: getNewExpirationTime(),
     },
   ]);
   const addThought = (thought) => {

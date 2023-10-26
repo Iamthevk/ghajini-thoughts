@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { generateId, getNewExpirationTime } from "../utils";
 
+// eslint-disable-next-line react/prop-types
 const AddThoughtForm = ({ addThought }) => {
   const [value, setValue] = useState("");
   const handleChange = ({ target }) => {
@@ -8,14 +10,14 @@ const AddThoughtForm = ({ addThought }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const thought = {
-      id: 3,
+      id: generateId(),
       text: value,
-      expiresAt: 3000,
+      expiresAt: getNewExpirationTime(),
     };
     addThought(thought);
     setValue("");
   };
-  console.log(value);
+  //   console.log(value);
   return (
     <form className="AddThoughtForm" onSubmit={handleSubmit}>
       <input
