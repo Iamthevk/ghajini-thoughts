@@ -15,13 +15,16 @@ function App() {
       expiresAt: 3000,
     },
   ]);
+  const addThought = (thought) => {
+    setThoughts((prevThoughts) => [thought, ...prevThoughts]);
+  };
   return (
     <>
       <header className="App">
         <h1>Ghajini Thoughts</h1>
       </header>
       <main>
-        <AddThoughtForm />
+        <AddThoughtForm addThought={addThought} />
         <ul className="thoughts">
           {thoughts.map((thought) => {
             return (
