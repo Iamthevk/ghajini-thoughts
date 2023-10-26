@@ -14,7 +14,7 @@ const AddThoughtForm = ({ addThought }) => {
       text: value,
       expiresAt: getNewExpirationTime(),
     };
-    addThought(thought);
+    if (value.length > 0) addThought(thought);
     setValue("");
   };
   //   console.log(value);
